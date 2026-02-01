@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lovit Social</title>
+    <style>
+        body { font-family: sans-serif; background: #f0f2f5; color: #1c1e21; margin: 0; padding: 20px; }
+        .navbar { background: #ffffff; padding: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: fixed; top: 0; left: 0; right: 0; text-align: center; font-weight: bold; color: #1877f2; z-index: 1000; }
+        .feed { max-width: 500px; margin: 60px auto 20px; }
+        .post { background: white; border-radius: 8px; padding: 15px; margin-bottom: 20px; box-shadow: 0 1px 2px rgba(0,0,0,0.2); }
+        .post-header { font-weight: bold; margin-bottom: 10px; display: flex; align-items: center; }
+        .post-img { width: 100%; border-radius: 4px; margin: 10px 0; }
+        .post-video { width: 100%; border-radius: 4px; }
+        .like-bar { border-top: 1px solid #e4e6eb; padding-top: 10px; color: #65676b; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+    <div class="navbar">Lovit Social</div>
+    <div class="feed">
+        <div class="post">
+            <div class="post-header">Project Lovit Bot</div>
+            <p>Just finished a new automation cycle! 🚀</p>
+            <img src="your-photo.jpg" alt="Update Photo" class="post-img" onerror="this.src='https://via.placeholder.com/400x200?text=Your+Photo+Here'">
+            <div class="like-bar">👍 Like · 💬 Comment</div>
+        </div>
+        
+        <div class="post">
+            <div class="post-header">System Update</div>
+            <p>Watch the bot in action:</p>
+            <video controls class="post-video">
+                <source src="your-video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="like-bar">👍 Like · 💬 Comment</div>
+        </div>
+    </div>
+</body>
+</html>

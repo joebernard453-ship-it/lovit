@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { font-family: sans-serif; background-color: #f0f2f5; margin: 0; padding: 10px; }
+        .post-card { background: white; padding: 15px; border-radius: 8px; margin-bottom: 10px; box-shadow: 0 1px 2px rgba(0,0,0,0.1); }
+        .header { color: #1877f2; text-align: center; }
+        input { width: 100%; margin-bottom: 10px; padding: 12px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; }
+        button#post-btn { width: 100%; background: #1877f2; color: white; border: none; padding: 10px; border-radius: 6px; font-weight: bold; }
+        .delete-btn { color: #f02849; border: none; background: none; float: right; cursor: pointer; font-size: 12px; }
+    </style>
+</head>
+<body>
+    <h1 class="header">Lovit Social</h1>
+    <div class="post-card">
+        <form action="/post" method="POST" enctype="multipart/form-data">
+            <input type="text" name="username" placeholder="Your Name" required>
+            <input type="text" name="content" placeholder="What's on your mind?" required>
+            <input type="file" name="image" accept="image/*">
+            <button id="post-btn" type="submit">Post to Feed</button>
+        </form>
+    </div>
+    {% for post in posts|reverse %}
+    <div class="post-card">
+        <form action="/delete/{{ loop.index0 }}" method="POST">
+            <button class="delete-btn" type="submit">Delete</button>
+        </form>
+        <strong>{{ post.name }}</strong>
+        <p>{{ post.text }}</p>
+        {% if post.image %}<p style="color: #1877f2; font-size: 12px;">📎 Media: {{ post.image }}</p>{% endif %}
+    </div>
+    {% endfor %}
+</body>
+</html>
